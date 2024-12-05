@@ -149,10 +149,10 @@ for attempts in range (1,4):
         if use_no_use == "YES":
             while True:
                 which_one1 = input("Which award would you like to use").lower()
-                if which_one1 == "sustainable travels":
+                if which_one1 == "sustainable travel":
                     score += 0.5
                     print("Your new score is" , score)
-                    awards.remove("Sustainable Travels")
+                    awards.remove("Sustainable Travel")
                     break
                 elif which_one1 == "electro saver":
                     score += 0.5
@@ -167,7 +167,7 @@ for attempts in range (1,4):
                 else:
                     print("Enter a valid answer, it has to be one of your rewards")
             while True:
-                if awards.len() > 0:
+                if len(awards) > 0:
                     which_one2 = input("Which other award would you like to use").lower()
                     print("You have these awards", awards)
                     if which_one2 == "sustainable travel":
@@ -194,7 +194,7 @@ for attempts in range (1,4):
                     print("You do not have anymore awards")
                     break
             while True:
-                if awards.len() > 0:
+                if len(awards) > 0:
                     which_one3 = input("Which other award would you like to use").lower()
                     print("You have these awards", awards)
                     if which_one3 == "sustainable travels":
@@ -207,13 +207,13 @@ for attempts in range (1,4):
                         score += 0.5
                         print("Your new score is", score)
                         print("anything else?")
-                        rewards.remove("Electro Saver")
+                        awards.remove("Electro Saver")
                         break
                     elif which_one3 == "water saver":
                         score += 0.5
                         print("Your new score is", score)
                         print("anything else?")
-                        rewards.remove("Water Saver")
+                        awards.remove("Water Saver")
                         break
                     else:
                         print("Enter a valid answer, it has to be one of your rewards")
