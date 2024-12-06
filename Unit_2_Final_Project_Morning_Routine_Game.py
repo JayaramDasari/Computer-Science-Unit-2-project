@@ -26,7 +26,7 @@ for attempts in range (1,4):
             awards.insert(0,"Water Saver")
             break
         elif bath_or_shower == "bath":
-            print("Oh no, taking a bath is such a waste of water!. You have just lost 1 point and your score is now -1")
+            print("Oh no, taking a bath is such a waste of water! You have just lost 1 point and your score is now -1")
             score -= 1
             feedback.append("Showering saves water adding 1.6kg")
             carbon_footprint = carbon_footprint + 1.6
@@ -100,7 +100,7 @@ for attempts in range (1,4):
         car_or_bike = input("Now you are exiting your house, will you ask your parents to drop you off with a car or will you walk/bike to school?").lower()
         if car_or_bike == "bike" or car_or_bike == "walk":
             score += 1
-            print("Great choice, walking is a much more sustainable than using a car which emits a lot of carbon. Your score is now " , score , " and you gained a sustainable travel reward!")
+            print("Great choice, walking/biking is a much more sustainable than using a car which emits a lot of carbon. Your score is now " , score , " and you gained a sustainable travel reward!")
             awards.insert(0, "Sustainable Travel")
             break
         elif car_or_bike == "car":
@@ -126,18 +126,20 @@ for attempts in range (1,4):
     print("Your carbon footprint is" , carbon_footprint , "kg")
 
 # Ask them if they want to know how their carbon footprint is calculated. If they say yes, print the feedback, if they say no, continue with the code
+    time.sleep(2)
     while True:
         feedback_yes_no = input("Would you like to know how your carbonfoorpint is calculated?").lower()
         if feedback_yes_no == "yes":
             print("Here is your carbon footprint calculations")
             print(feedback)
-            print("This gives you a total carbon foorpint of" , carbon_footprint)
+            print("This gives you a total carbon foorpint of" , carbon_footprint , "kg")
             break
         elif feedback_yes_no == "no":
             print("Okay we won't show you")
             break
         else:
             print("Enter a valid response (yes or no)")
+    time.sleep(2)
 
 # Print their awards
     print("Here are all the awards you gained:")
@@ -148,71 +150,67 @@ for attempts in range (1,4):
         use_no_use = input("Would you like to use any of your awards (yes or no). Each reward can give you 0.5 to your score?").upper()
         if use_no_use == "YES":
             while True:
-                which_one1 = input("Which award would you like to use").lower()
-                if which_one1 == "sustainable travel":
-                    score += 0.5
-                    print("Your new score is" , score)
-                    awards.remove("Sustainable Travel")
-                    break
-                elif which_one1 == "electro saver":
-                    score += 0.5
-                    print("Your new score is", score)
-                    awards.remove("Electro Saver")
-                    break
-                elif which_one1 == "water saver":
-                    score += 0.5
-                    print("Your new score is", score)
-                    awards.remove("Water Saver")
-                    break
-                else:
-                    print("Enter a valid answer, it has to be one of your rewards")
-            while True:
                 if len(awards) > 0:
-                    which_one2 = input("Which other award would you like to use").lower()
-                    print("You have these awards", awards)
-                    if which_one2 == "sustainable travel":
+                    which_one1 = input("Which award would you like to use").lower()
+                    if which_one1 == "sustainable travel":
                         score += 0.5
-                        print("Your new score is", score)
-                        print("anything else?")
+                        print("Your new score is" , score)
                         awards.remove("Sustainable Travel")
                         break
-                    elif which_one2 == "electro saver":
+                    elif which_one1 == "electro saver":
                         score += 0.5
                         print("Your new score is", score)
-                        print("anything else?")
                         awards.remove("Electro Saver")
                         break
-                    elif which_one2 == "water saver":
+                    elif which_one1 == "water saver":
                         score += 0.5
                         print("Your new score is", score)
-                        print("anything else?")
                         awards.remove("Water Saver")
                         break
                     else:
                         print("Enter a valid answer, it has to be one of your rewards")
                 else:
-                    print("You do not have anymore awards")
                     break
             while True:
                 if len(awards) > 0:
-                    which_one3 = input("Which other award would you like to use").lower()
                     print("You have these awards", awards)
+                    which_one2 = input("Which other award would you like to use").lower()
+                    if which_one2 == "sustainable travel":
+                        score += 0.5
+                        print("Your new score is", score)
+                        awards.remove("Sustainable Travel")
+                        break
+                    elif which_one2 == "electro saver":
+                        score += 0.5
+                        print("Your new score is", score)
+                        awards.remove("Electro Saver")
+                        break
+                    elif which_one2 == "water saver":
+                        score += 0.5
+                        print("Your new score is", score)
+                        awards.remove("Water Saver")
+                        break
+                    else:
+                        print("Enter a valid answer, it has to be one of your rewards")
+                else:
+                    break
+            while True:
+                if len(awards) > 0:
+                    print("You have these awards", awards)
+                    which_one3 = input("Which other award would you like to use").lower()
                     if which_one3 == "sustainable travels":
                         score += 0.5
                         print("Your new score is", score)
-                        print("anything else?")
                         awards.remove("sustainable travels")
                         break
                     elif which_one3 == "electro saver":
                         score += 0.5
                         print("Your new score is", score)
-                        print("anything else?")
                         awards.remove("Electro Saver")
                         break
                     elif which_one3 == "water saver":
                         score += 0.5
                         print("Your new score is", score)
-                        print("anything else?")
                         awards.remove("Water Saver")
                         break
                     else:
@@ -220,6 +218,7 @@ for attempts in range (1,4):
                 else:
                     print("You do not have any more rewards")
                     break
+            break
         elif use_no_use == "NO":
             print("Okay, your awards have not been used and your final score is" , score)
             break
@@ -228,8 +227,9 @@ for attempts in range (1,4):
 
 # If their score is more than 5 after using all their awards, then congrajulate them and break the loop for the number of tries.
     if score > 5:
-        print("Congrajulations you beat the game!!!!")
+        print("Your final score, after using up all your awards is more than 5. Congrajulations you beat the game!!!!")
         break
+
 # If their score is not above 5, print game ending and make them repeat the game
     else:
         print("Looks like you used up all your rewards and your final score is", score, "It's not bad, but it certainly can improve. You have 2 attempts left to make your score above 5, try this game again and see how low you can get your carbon score!")
