@@ -15,7 +15,7 @@ for attempts in range (1,4):
 
 
 #Ask the user if they want to shower of bath, if they say bath, remove 1 to score and add 1.6 to carbon footprint.
-# If they say shower, add 1 to score and give them water saver reward. If they don't answer accordingly, keep asking them.
+# If they say shower, add 1 to score and give them water saver reward. If they don't answer accordingly, keep asking them until they respond with shower or bath
     time.sleep(5)
     bath_or_shower = ()
     while True:
