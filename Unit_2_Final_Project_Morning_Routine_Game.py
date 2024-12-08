@@ -171,6 +171,8 @@ for attempts in range (1,4):
                         print("Enter a valid answer, it has to be one of your rewards")
                 else:
                     break
+
+# If they have other awards, ask them which other one they want to use. Add 0.5 to each award they use and remove it from their awards list.
             while True:
                 if len(awards) > 0:
                     print("You have these awards", awards)
@@ -194,6 +196,8 @@ for attempts in range (1,4):
                         print("Enter a valid answer, it has to be one of your rewards")
                 else:
                     break
+
+# If they have other awards, ask them which other one they want to use. Add 0.5 to each award they use and remove it from their awards list.
             while True:
                 if len(awards) > 0:
                     print("You have these awards", awards)
@@ -219,6 +223,8 @@ for attempts in range (1,4):
                     print("You do not have any more rewards")
                     break
             break
+
+# If they say they would not like use their awards, print the final code, break the loop. If they say something apart from yes and no, continue the loop and keep asking them until they say "yes" or "no"
         elif use_no_use == "NO":
             print("Okay, your awards have not been used and your final score is" , score)
             break
