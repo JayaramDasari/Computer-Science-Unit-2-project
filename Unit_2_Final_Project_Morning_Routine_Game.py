@@ -202,10 +202,10 @@ for attempts in range (1,4):
                 if len(awards) > 0:
                     print("You have these awards", awards)
                     which_one3 = input("Which other award would you like to use").lower()
-                    if which_one3 == "sustainable travels":
+                    if which_one3 == "sustainable travel":
                         score += 0.5
                         print("Your new score is", score)
-                        awards.remove("sustainable travels")
+                        awards.remove("Sustainable travel")
                         break
                     elif which_one3 == "electro saver":
                         score += 0.5
